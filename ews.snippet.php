@@ -29,6 +29,10 @@ $props['dayAttr']	= $modx->getOption('dayAttr', $scriptProperties);
 $props['dayClass']	= $modx->getOption('dayClass', $scriptProperties);
 $props['eventAttr']	= $modx->getOption('eventAttr', $scriptProperties);
 
+$props['calname']   = $modx->getOption('calname', $scriptProperties);
+$props['caldesc']   = $modx->getOption('caldesc', $scriptProperties);
+$props['timezone']   = $modx->getOption('timezone', $scriptProperties);
+
 if(!$props['year']) $props['year'] = date('Y');
 if(!$props['month']) $props['month'] = date('m');
 

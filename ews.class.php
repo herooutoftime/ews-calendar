@@ -49,6 +49,8 @@ class EWS
         $this->dayClass = $props['dayClass'];
         $this->eventAttr = $props['eventAttr'];
         
+		
+		
         $this->s = 'mail.domain.com';
         $this->u = 'username';
         $this->p = 'password';
@@ -298,9 +300,9 @@ class EWS
      */
     public function generateICS() {
         $cal = new vcalendar();
-		$cal->setProperty( "x-wr-calname", "Calendar Name" );
-        $cal->setProperty( "X-WR-CALDESC", "A description" );
-        $cal->setProperty( "X-WR-TIMEZONE", "Timezone (e.g. 'Europe/Vienna')" );
+		$cal->setProperty( "x-wr-calname", $this->props['calname'] );
+        $cal->setProperty( "X-WR-CALDESC", $this->props['caldesc'] );
+        $cal->setProperty( "X-WR-TIMEZONE", $this->props['timezone'] );
 		
 		$response = $this->getCalendarList($this->month, $this->year, $this->range);
 		if(is_object($response))
